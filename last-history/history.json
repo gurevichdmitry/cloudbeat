@@ -1,0 +1,191 @@
+{
+  "2b1e2140076344281470f26864fe11ca" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "552a762778aaf943",
+      "reportUrl" : "https://gurevichdmitry.github.io/cloudbeat/1//#testresult/552a762778aaf943",
+      "status" : "broken",
+      "statusDetails" : "docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))",
+      "time" : {
+        "start" : 1650954531243,
+        "stop" : 1650954531243,
+        "duration" : 0
+      }
+    } ]
+  },
+  "a40f2f923d46ce56ce4e6b07dae622e4" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a9d065da0de63d3e",
+      "reportUrl" : "https://gurevichdmitry.github.io/cloudbeat/1//#testresult/a9d065da0de63d3e",
+      "status" : "broken",
+      "statusDetails" : "docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))",
+      "time" : {
+        "start" : 1650954533030,
+        "stop" : 1650954533030,
+        "duration" : 0
+      }
+    } ]
+  },
+  "2edb527ff01f9d839a8dff55ac683ad6" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "30bcdff45d4b0134",
+      "reportUrl" : "https://gurevichdmitry.github.io/cloudbeat/1//#testresult/30bcdff45d4b0134",
+      "status" : "broken",
+      "statusDetails" : "docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))",
+      "time" : {
+        "start" : 1650954531758,
+        "stop" : 1650954531758,
+        "duration" : 0
+      }
+    } ]
+  },
+  "cc56ce2a2e1c0b858a9d89c179efe78c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a4b133b0514aa976",
+      "reportUrl" : "https://gurevichdmitry.github.io/cloudbeat/1//#testresult/a4b133b0514aa976",
+      "status" : "broken",
+      "statusDetails" : "docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))",
+      "time" : {
+        "start" : 1650954530901,
+        "stop" : 1650954530901,
+        "duration" : 0
+      }
+    } ]
+  },
+  "59519f8e4a4f45d238e2ab1c7e427d91" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "604671d2e880cfa7",
+      "reportUrl" : "https://gurevichdmitry.github.io/cloudbeat/1//#testresult/604671d2e880cfa7",
+      "status" : "broken",
+      "statusDetails" : "docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))",
+      "time" : {
+        "start" : 1650954532795,
+        "stop" : 1650954532795,
+        "duration" : 0
+      }
+    } ]
+  },
+  "340b1352366a720edfed2f1d5d8c260f" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ff9fc04bdc3a7579",
+      "reportUrl" : "https://gurevichdmitry.github.io/cloudbeat/1//#testresult/ff9fc04bdc3a7579",
+      "status" : "broken",
+      "statusDetails" : "docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))",
+      "time" : {
+        "start" : 1650954532520,
+        "stop" : 1650954532520,
+        "duration" : 0
+      }
+    } ]
+  },
+  "8b068b2cc022d5d0f677c41ab3cee6ee" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b931f9bde7c07809",
+      "reportUrl" : "https://gurevichdmitry.github.io/cloudbeat/1//#testresult/b931f9bde7c07809",
+      "status" : "broken",
+      "statusDetails" : "docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))",
+      "time" : {
+        "start" : 1650954532284,
+        "stop" : 1650954532284,
+        "duration" : 0
+      }
+    } ]
+  },
+  "3b2fce48ece491575a06d23ab8f2970e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f49ed32c5e70dc54",
+      "reportUrl" : "https://gurevichdmitry.github.io/cloudbeat/1//#testresult/f49ed32c5e70dc54",
+      "status" : "broken",
+      "statusDetails" : "docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))",
+      "time" : {
+        "start" : 1650954532004,
+        "stop" : 1650954532004,
+        "duration" : 0
+      }
+    } ]
+  },
+  "0849778540401697274d540ce0ac6217" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b83a673bcbfa57e",
+      "reportUrl" : "https://gurevichdmitry.github.io/cloudbeat/1//#testresult/b83a673bcbfa57e",
+      "status" : "broken",
+      "statusDetails" : "docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))",
+      "time" : {
+        "start" : 1650954531482,
+        "stop" : 1650954531482,
+        "duration" : 0
+      }
+    } ]
+  }
+}
