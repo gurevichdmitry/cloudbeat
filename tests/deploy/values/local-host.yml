@@ -2,4 +2,4 @@ cloudbeat:
   deploy: false
 
 testData:
-  marker: rules
+  marker: cis_benchmark

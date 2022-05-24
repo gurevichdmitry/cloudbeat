@@ -9,5 +9,8 @@ data:
   ES_USER: "elastic"
   ES_PASSWORD: "changeme"
   ES_HOST: "elasticsearch-master.kube-system"
+  KIBANA_FLEET_USERNAME: "elastic"
+  KIBANA_FLEET_PASSWORD: "changeme"
+  KIBANA_HOST: "http://kibana-kibana.kube-system:5601"
   USE_DOCKER: "false"
   TEST_MARKER: {{ .Values.testData.marker }}

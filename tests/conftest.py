@@ -4,6 +4,7 @@ from commonlib.kubernetes import KubernetesHelper
 from commonlib.elastic_wrapper import ElasticWrapper
 from commonlib.docker_wrapper import DockerWrapper
 from commonlib.io_utils import FsClient
+from commonlib.kibana.integrations import Integrations
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -52,3 +53,25 @@ def api_client():
     else:
         client = FsClient
     return client
+
+
+@pytest.fixture(scope="session", autouse=True)
+def fleet_client():
+    """
+    This function instantiates fleet client.
+    @return: Fleet client
+    """
+    kibana_config = configuration.kibana
+    client = Integrations(host=kibana_config.host,
+                          username=kibana_config.fleet_username,
+                          password=kibana_config.fleet_password)
+    return client
+
+
+@pytest.fixture(scope='session', autouse=True)
+def cis_k8s_benchmark():
+    """
+    This function (fixture) retrieves cis benchmark configuration, defined in configuration.py file.
+    @return: CIS Benchmark config
+    """
+    return configuration.cis_benchmark

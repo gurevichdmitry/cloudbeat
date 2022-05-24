@@ -27,6 +27,16 @@ elasticsearch.protocol = os.getenv('ES_PROTOCOL', 'http')
 elasticsearch.url = f"{elasticsearch.protocol}://{elasticsearch.hosts}:{elasticsearch.port}"
 elasticsearch.cis_index = os.getenv('CIS_INDEX', "*cloud_security_posture.findings*")
 
+# --- Kibana environment definition ----------------------------------------
+kibana = Munch()
+kibana.host = os.getenv('KIBANA_HOST', 'http://localhost:5601')
+kibana.fleet_username = os.getenv('KIBANA_FLEET_USERNAME', 'elastic')
+kibana.fleet_password = os.getenv('KIBANA_FLEET_PASSWORD', 'changeme')
+
+# --- CIS Benchmark definition ----------------------------------------
+cis_benchmark = Munch()
+cis_benchmark.name = os.getenv('CIS_BENCHMARK_NAME', 'cloud_security_posture')
+
 # --- Docker environment definition
 docker = Munch()
 docker.base_url = os.getenv('DOCKER_URL', "")
