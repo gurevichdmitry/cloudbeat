@@ -24,7 +24,7 @@ concurrency:
 jobs:
   Build:
     name: Build
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     timeout-minutes: 40
     steps:
       # Disk cleanup
@@ -52,6 +52,8 @@ jobs:
         with:
           version: latest
           args: build
+        env:
+          CGO_ENABLED: 0
 
       - name: build opa bundle
         uses: magefile/mage-action@v2
