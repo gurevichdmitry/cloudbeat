@@ -62,6 +62,7 @@ jobs:
           ./cloudbeat -c deploy/gcp/cloudbeat-gcp.yml -d '*' &
 
       - name: Check for findings
+        id: run-tests
         working-directory: ./tests
         env:
           USE_K8S: false
