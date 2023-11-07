@@ -11,7 +11,7 @@ cloudbeat:
           credentials_file_path: ${GOOGLE_APPLICATION_CREDENTIALS:""}
   type: cloudbeat/cis_gcp
   # Defines how often an event is sent to the output
-  period: 60s
+  period: 30s
   evaluator:
     decision_logs: false
 # =================================== Kibana ===================================
