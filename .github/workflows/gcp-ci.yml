@@ -65,7 +65,6 @@ jobs:
         working-directory: ./tests
         env:
           USE_K8S: false
-          STACK_VERSION: ${{ env.CLOUDBEAT_VERSION }}
         run: |
           poetry install
           poetry run pytest -k "cspm_gcp" --alluredir=./allure/results/ --clean-alluredir --maxfail=1
