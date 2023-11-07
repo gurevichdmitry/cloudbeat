@@ -67,10 +67,16 @@ jobs:
           USE_K8S: false
         run: |
           curl -X PUT "http://localhost:9200/*cloud_security_posture.findings*/_settings" -H "Content-Type: application/json" -d '{
-            "index.mapping.total_fields.limit": 2000,
+            "index.mapping.total_fields.limit": 2000
           }'
           poetry install
           poetry run pytest -k "cspm_gcp" --alluredir=./allure/results/ --clean-alluredir --maxfail=1
+
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        if: failure()
+        with:
+          limit-access-to-actor: true
 
       - name: Print cloudbeat logs
         if: always()
