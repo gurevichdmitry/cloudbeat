@@ -12,7 +12,7 @@ from configuration import elasticsearch
 from loguru import logger
 
 CONFIG_TIMEOUT = 120
-GCP_CONFIG_TIMEOUT = 1800
+GCP_CONFIG_TIMEOUT = 300
 CNVM_CONFIG_TIMEOUT = 3600
 
 STACK_VERSION = elasticsearch.stack_version
