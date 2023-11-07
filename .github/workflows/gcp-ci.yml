@@ -69,6 +69,12 @@ jobs:
           poetry install
           poetry run pytest -k "cspm_gcp" --alluredir=./allure/results/ --clean-alluredir --maxfail=1
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        if: failure()
+        with:
+          limit-access-to-actor: true
+
       - name: Print cloudbeat logs
         if: always()
         run: |
