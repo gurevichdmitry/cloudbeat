@@ -20,6 +20,8 @@ STACK_VERSION = elasticsearch.stack_version
 if not STACK_VERSION:
     logger.warning("STACK_VERSION is not provided. Please set the STACK_VERSION in the configuration.")
 
+agent_term = {"term": {"agent.version": STACK_VERSION}}
+
 tests_data = {
     "cis_aws": [
         "cloud-compute",
@@ -168,8 +170,9 @@ def test_cspm_gcp_findings(cspm_client, match_type):
     query_list = [
         {"term": {"rule.benchmark.id": "cis_gcp"}},
         {"term": {"resource.type": match_type}},
-        {"term": {"agent.version": STACK_VERSION}},
     ]
+    if STACK_VERSION:
+        query_list.append(agent_term)
     query, sort = cspm_client.build_es_must_match_query(must_query_list=query_list, time_range="now-24h")
 
     results = get_findings(cspm_client, GCP_CONFIG_TIMEOUT, query, sort, match_type)
