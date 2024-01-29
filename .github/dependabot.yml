@@ -35,7 +35,7 @@ updates:
     ignore:
       - dependency-name: "github.com/elastic/beats/v7"
     schedule:
-      interval: "weekly"
+      interval: "daily"
       day: "monday"
 
   # Maintain dependencies for GitHub Actions
