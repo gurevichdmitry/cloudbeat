@@ -43,6 +43,116 @@ func (_m *MockProviderAPI) EXPECT() *MockProviderAPI_Expecter {
 	return &MockProviderAPI_Expecter{mock: &_m.Mock}
 }
 
+// GetAppServiceAuthSettings provides a mock function with given fields: ctx, webApp
+func (_m *MockProviderAPI) GetAppServiceAuthSettings(ctx context.Context, webApp inventory.AzureAsset) ([]inventory.AzureAsset, error) {
+	ret := _m.Called(ctx, webApp)
+
+	var r0 []inventory.AzureAsset
+	var r1 error
+	if rf, ok := ret.Get(0).(func(context.Context, inventory.AzureAsset) ([]inventory.AzureAsset, error)); ok {
+		return rf(ctx, webApp)
+	}
+	if rf, ok := ret.Get(0).(func(context.Context, inventory.AzureAsset) []inventory.AzureAsset); ok {
+		r0 = rf(ctx, webApp)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]inventory.AzureAsset)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(context.Context, inventory.AzureAsset) error); ok {
+		r1 = rf(ctx, webApp)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// MockProviderAPI_GetAppServiceAuthSettings_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetAppServiceAuthSettings'
+type MockProviderAPI_GetAppServiceAuthSettings_Call struct {
+	*mock.Call
+}
+
+// GetAppServiceAuthSettings is a helper method to define mock.On call
+//   - ctx context.Context
+//   - webApp inventory.AzureAsset
+func (_e *MockProviderAPI_Expecter) GetAppServiceAuthSettings(ctx interface{}, webApp interface{}) *MockProviderAPI_GetAppServiceAuthSettings_Call {
+	return &MockProviderAPI_GetAppServiceAuthSettings_Call{Call: _e.mock.On("GetAppServiceAuthSettings", ctx, webApp)}
+}
+
+func (_c *MockProviderAPI_GetAppServiceAuthSettings_Call) Run(run func(ctx context.Context, webApp inventory.AzureAsset)) *MockProviderAPI_GetAppServiceAuthSettings_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(inventory.AzureAsset))
+	})
+	return _c
+}
+
+func (_c *MockProviderAPI_GetAppServiceAuthSettings_Call) Return(_a0 []inventory.AzureAsset, _a1 error) *MockProviderAPI_GetAppServiceAuthSettings_Call {
+	_c.Call.Return(_a0, _a1)
+	return _c
+}
+
+func (_c *MockProviderAPI_GetAppServiceAuthSettings_Call) RunAndReturn(run func(context.Context, inventory.AzureAsset) ([]inventory.AzureAsset, error)) *MockProviderAPI_GetAppServiceAuthSettings_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// GetAppServiceSiteConfig provides a mock function with given fields: ctx, webApp
+func (_m *MockProviderAPI) GetAppServiceSiteConfig(ctx context.Context, webApp inventory.AzureAsset) ([]inventory.AzureAsset, error) {
+	ret := _m.Called(ctx, webApp)
+
+	var r0 []inventory.AzureAsset
+	var r1 error
+	if rf, ok := ret.Get(0).(func(context.Context, inventory.AzureAsset) ([]inventory.AzureAsset, error)); ok {
+		return rf(ctx, webApp)
+	}
+	if rf, ok := ret.Get(0).(func(context.Context, inventory.AzureAsset) []inventory.AzureAsset); ok {
+		r0 = rf(ctx, webApp)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]inventory.AzureAsset)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(context.Context, inventory.AzureAsset) error); ok {
+		r1 = rf(ctx, webApp)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// MockProviderAPI_GetAppServiceSiteConfig_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetAppServiceSiteConfig'
+type MockProviderAPI_GetAppServiceSiteConfig_Call struct {
+	*mock.Call
+}
+
+// GetAppServiceSiteConfig is a helper method to define mock.On call
+//   - ctx context.Context
+//   - webApp inventory.AzureAsset
+func (_e *MockProviderAPI_Expecter) GetAppServiceSiteConfig(ctx interface{}, webApp interface{}) *MockProviderAPI_GetAppServiceSiteConfig_Call {
+	return &MockProviderAPI_GetAppServiceSiteConfig_Call{Call: _e.mock.On("GetAppServiceSiteConfig", ctx, webApp)}
+}
+
+func (_c *MockProviderAPI_GetAppServiceSiteConfig_Call) Run(run func(ctx context.Context, webApp inventory.AzureAsset)) *MockProviderAPI_GetAppServiceSiteConfig_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(inventory.AzureAsset))
+	})
+	return _c
+}
+
+func (_c *MockProviderAPI_GetAppServiceSiteConfig_Call) Return(_a0 []inventory.AzureAsset, _a1 error) *MockProviderAPI_GetAppServiceSiteConfig_Call {
+	_c.Call.Return(_a0, _a1)
+	return _c
+}
+
+func (_c *MockProviderAPI_GetAppServiceSiteConfig_Call) RunAndReturn(run func(context.Context, inventory.AzureAsset) ([]inventory.AzureAsset, error)) *MockProviderAPI_GetAppServiceSiteConfig_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
 // GetFlexibleTLSVersionConfiguration provides a mock function with given fields: ctx, subID, resourceGroup, serverName
 func (_m *MockProviderAPI) GetFlexibleTLSVersionConfiguration(ctx context.Context, subID string, resourceGroup string, serverName string) ([]inventory.AzureAsset, error) {
 	ret := _m.Called(ctx, subID, resourceGroup, serverName)
@@ -268,6 +378,61 @@ func (_c *MockProviderAPI_ListAllAssetTypesByName_Call) RunAndReturn(run func(co
 	return _c
 }
 
+// ListAutoProvisioningSettings provides a mock function with given fields: ctx, subscriptionID
+func (_m *MockProviderAPI) ListAutoProvisioningSettings(ctx context.Context, subscriptionID string) ([]inventory.AzureAsset, error) {
+	ret := _m.Called(ctx, subscriptionID)
+
+	var r0 []inventory.AzureAsset
+	var r1 error
+	if rf, ok := ret.Get(0).(func(context.Context, string) ([]inventory.AzureAsset, error)); ok {
+		return rf(ctx, subscriptionID)
+	}
+	if rf, ok := ret.Get(0).(func(context.Context, string) []inventory.AzureAsset); ok {
+		r0 = rf(ctx, subscriptionID)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]inventory.AzureAsset)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(context.Context, string) error); ok {
+		r1 = rf(ctx, subscriptionID)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// MockProviderAPI_ListAutoProvisioningSettings_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'ListAutoProvisioningSettings'
+type MockProviderAPI_ListAutoProvisioningSettings_Call struct {
+	*mock.Call
+}
+
+// ListAutoProvisioningSettings is a helper method to define mock.On call
+//   - ctx context.Context
+//   - subscriptionID string
+func (_e *MockProviderAPI_Expecter) ListAutoProvisioningSettings(ctx interface{}, subscriptionID interface{}) *MockProviderAPI_ListAutoProvisioningSettings_Call {
+	return &MockProviderAPI_ListAutoProvisioningSettings_Call{Call: _e.mock.On("ListAutoProvisioningSettings", ctx, subscriptionID)}
+}
+
+func (_c *MockProviderAPI_ListAutoProvisioningSettings_Call) Run(run func(ctx context.Context, subscriptionID string)) *MockProviderAPI_ListAutoProvisioningSettings_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(string))
+	})
+	return _c
+}
+
+func (_c *MockProviderAPI_ListAutoProvisioningSettings_Call) Return(_a0 []inventory.AzureAsset, _a1 error) *MockProviderAPI_ListAutoProvisioningSettings_Call {
+	_c.Call.Return(_a0, _a1)
+	return _c
+}
+
+func (_c *MockProviderAPI_ListAutoProvisioningSettings_Call) RunAndReturn(run func(context.Context, string) ([]inventory.AzureAsset, error)) *MockProviderAPI_ListAutoProvisioningSettings_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
 // ListDiagnosticSettingsAssetTypes provides a mock function with given fields: ctx, cycleMetadata, subscriptionIDs
 func (_m *MockProviderAPI) ListDiagnosticSettingsAssetTypes(ctx context.Context, cycleMetadata cycle.Metadata, subscriptionIDs []string) ([]inventory.AzureAsset, error) {
 	ret := _m.Called(ctx, cycleMetadata, subscriptionIDs)
@@ -434,6 +599,61 @@ func (_c *MockProviderAPI_ListFlexiblePostgresFirewallRules_Call) Return(_a0 []i
 }
 
 func (_c *MockProviderAPI_ListFlexiblePostgresFirewallRules_Call) RunAndReturn(run func(context.Context, string, string, string) ([]inventory.AzureAsset, error)) *MockProviderAPI_ListFlexiblePostgresFirewallRules_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// ListKeyVaultDiagnosticSettings provides a mock function with given fields: ctx, vault
+func (_m *MockProviderAPI) ListKeyVaultDiagnosticSettings(ctx context.Context, vault inventory.AzureAsset) ([]inventory.AzureAsset, error) {
+	ret := _m.Called(ctx, vault)
+
+	var r0 []inventory.AzureAsset
+	var r1 error
+	if rf, ok := ret.Get(0).(func(context.Context, inventory.AzureAsset) ([]inventory.AzureAsset, error)); ok {
+		return rf(ctx, vault)
+	}
+	if rf, ok := ret.Get(0).(func(context.Context, inventory.AzureAsset) []inventory.AzureAsset); ok {
+		r0 = rf(ctx, vault)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]inventory.AzureAsset)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(context.Context, inventory.AzureAsset) error); ok {
+		r1 = rf(ctx, vault)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// MockProviderAPI_ListKeyVaultDiagnosticSettings_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'ListKeyVaultDiagnosticSettings'
+type MockProviderAPI_ListKeyVaultDiagnosticSettings_Call struct {
+	*mock.Call
+}
+
+// ListKeyVaultDiagnosticSettings is a helper method to define mock.On call
+//   - ctx context.Context
+//   - vault inventory.AzureAsset
+func (_e *MockProviderAPI_Expecter) ListKeyVaultDiagnosticSettings(ctx interface{}, vault interface{}) *MockProviderAPI_ListKeyVaultDiagnosticSettings_Call {
+	return &MockProviderAPI_ListKeyVaultDiagnosticSettings_Call{Call: _e.mock.On("ListKeyVaultDiagnosticSettings", ctx, vault)}
+}
+
+func (_c *MockProviderAPI_ListKeyVaultDiagnosticSettings_Call) Run(run func(ctx context.Context, vault inventory.AzureAsset)) *MockProviderAPI_ListKeyVaultDiagnosticSettings_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(inventory.AzureAsset))
+	})
+	return _c
+}
+
+func (_c *MockProviderAPI_ListKeyVaultDiagnosticSettings_Call) Return(_a0 []inventory.AzureAsset, _a1 error) *MockProviderAPI_ListKeyVaultDiagnosticSettings_Call {
+	_c.Call.Return(_a0, _a1)
+	return _c
+}
+
+func (_c *MockProviderAPI_ListKeyVaultDiagnosticSettings_Call) RunAndReturn(run func(context.Context, inventory.AzureAsset) ([]inventory.AzureAsset, error)) *MockProviderAPI_ListKeyVaultDiagnosticSettings_Call {
 	_c.Call.Return(run)
 	return _c
 }
@@ -713,6 +933,63 @@ func (_c *MockProviderAPI_ListSQLEncryptionProtector_Call) Return(_a0 []inventor
 }
 
 func (_c *MockProviderAPI_ListSQLEncryptionProtector_Call) RunAndReturn(run func(context.Context, string, string, string) ([]inventory.AzureAsset, error)) *MockProviderAPI_ListSQLEncryptionProtector_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// ListSQLFirewallRules provides a mock function with given fields: ctx, subID, resourceGroup, serverName
+func (_m *MockProviderAPI) ListSQLFirewallRules(ctx context.Context, subID string, resourceGroup string, serverName string) ([]inventory.AzureAsset, error) {
+	ret := _m.Called(ctx, subID, resourceGroup, serverName)
+
+	var r0 []inventory.AzureAsset
+	var r1 error
+	if rf, ok := ret.Get(0).(func(context.Context, string, string, string) ([]inventory.AzureAsset, error)); ok {
+		return rf(ctx, subID, resourceGroup, serverName)
+	}
+	if rf, ok := ret.Get(0).(func(context.Context, string, string, string) []inventory.AzureAsset); ok {
+		r0 = rf(ctx, subID, resourceGroup, serverName)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]inventory.AzureAsset)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(context.Context, string, string, string) error); ok {
+		r1 = rf(ctx, subID, resourceGroup, serverName)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// MockProviderAPI_ListSQLFirewallRules_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'ListSQLFirewallRules'
+type MockProviderAPI_ListSQLFirewallRules_Call struct {
+	*mock.Call
+}
+
+// ListSQLFirewallRules is a helper method to define mock.On call
+//   - ctx context.Context
+//   - subID string
+//   - resourceGroup string
+//   - serverName string
+func (_e *MockProviderAPI_Expecter) ListSQLFirewallRules(ctx interface{}, subID interface{}, resourceGroup interface{}, serverName interface{}) *MockProviderAPI_ListSQLFirewallRules_Call {
+	return &MockProviderAPI_ListSQLFirewallRules_Call{Call: _e.mock.On("ListSQLFirewallRules", ctx, subID, resourceGroup, serverName)}
+}
+
+func (_c *MockProviderAPI_ListSQLFirewallRules_Call) Run(run func(ctx context.Context, subID string, resourceGroup string, serverName string)) *MockProviderAPI_ListSQLFirewallRules_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(string), args[2].(string), args[3].(string))
+	})
+	return _c
+}
+
+func (_c *MockProviderAPI_ListSQLFirewallRules_Call) Return(_a0 []inventory.AzureAsset, _a1 error) *MockProviderAPI_ListSQLFirewallRules_Call {
+	_c.Call.Return(_a0, _a1)
+	return _c
+}
+
+func (_c *MockProviderAPI_ListSQLFirewallRules_Call) RunAndReturn(run func(context.Context, string, string, string) ([]inventory.AzureAsset, error)) *MockProviderAPI_ListSQLFirewallRules_Call {
 	_c.Call.Return(run)
 	return _c
 }

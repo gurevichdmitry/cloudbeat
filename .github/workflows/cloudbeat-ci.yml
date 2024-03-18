@@ -23,11 +23,23 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
+      # Disk cleanup
+      - name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: false
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: false
+          docker-images: true
+          swap-storage: true
+
       - name: Check out the repo
         uses: actions/checkout@v4
 
       - name: Set up GO (with caching)
-        uses: magnetikonline/action-golang-cache@v4
+        uses: magnetikonline/action-golang-cache@v5
         with:
           go-version-file: .go-version
 
@@ -78,7 +90,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup GO (with caching)
-        uses: magnetikonline/action-golang-cache@v4
+        uses: magnetikonline/action-golang-cache@v5
         with:
           go-version-file: .go-version
 
@@ -115,7 +127,7 @@ jobs:
           BASE_IMAGE: docker.elastic.co/beats/elastic-agent:${{ env.CI_ELASTIC_AGENT_DOCKER_TAG }}
           GOOS: linux
           GOARCH: amd64
-        run: ./dev-tools/packaging/docker/elastic-agent/build.sh -t ${{ env.CI_ELASTIC_AGENT_DOCKER_IMAGE }}:${{ env.CI_ELASTIC_AGENT_DOCKER_TAG }}
+        run: ./scripts/packaging/docker/elastic-agent/build.sh -t ${{ env.CI_ELASTIC_AGENT_DOCKER_IMAGE }}:${{ env.CI_ELASTIC_AGENT_DOCKER_TAG }}
         shell: bash
 
       - name: Build pytest-docker
