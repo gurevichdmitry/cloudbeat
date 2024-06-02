@@ -23,13 +23,12 @@ import (
 	"time"
 
 	"github.com/elastic/beats/v7/libbeat/beat"
-	awsbeat "github.com/elastic/beats/v7/x-pack/libbeat/common/aws"
 	agentconfig "github.com/elastic/elastic-agent-libs/config"
 	"github.com/elastic/elastic-agent-libs/logp"
 
 	"github.com/elastic/cloudbeat/internal/config"
 	"github.com/elastic/cloudbeat/internal/inventory"
-	awsinventory "github.com/elastic/cloudbeat/internal/inventory/aws"
+	"github.com/elastic/cloudbeat/internal/inventory/awsfetcher"
 	"github.com/elastic/cloudbeat/internal/resources/providers/awslib"
 )
 
@@ -81,18 +80,18 @@ func newAssetInventoryFromCfg(b *beat.Beat, cfg *config.Config) (*assetInventory
 }
 
 func initAwsFetchers(ctx context.Context, cfg *config.Config, logger *logp.Logger) ([]inventory.AssetFetcher, error) {
-	awsConfig, err := awsbeat.InitializeAWSConfig(cfg.CloudConfig.Aws.Cred)
+	awsConfig, err := awslib.InitializeAWSConfig(cfg.CloudConfig.Aws.Cred)
 	if err != nil {
 		return nil, err
 	}
 
-	idProvider := awslib.IdentityProvider{}
-	awsIdentity, err := idProvider.GetIdentity(ctx, awsConfig)
+	idProvider := awslib.IdentityProvider{Logger: logger}
+	awsIdentity, err := idProvider.GetIdentity(ctx, *awsConfig)
 	if err != nil {
 		return nil, err
 	}
 
-	return awsinventory.Fetchers(logger, awsIdentity, awsConfig), nil
+	return awsfetcher.New(logger, awsIdentity, *awsConfig), nil
 }
 
 func (bt *assetInventory) Run(*beat.Beat) error {

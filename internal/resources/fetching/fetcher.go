@@ -43,16 +43,23 @@ const (
 	IAMServerCertificateType  = "aws-iam-server-certificate"
 	IAMType                   = "aws-iam"
 	IAMUserType               = "aws-iam-user"
+	InternetGateway           = "aws-internet-gateway"
 	KmsType                   = "aws-kms"
 	MultiTrailsType           = "aws-multi-trails"
+	NatGateway                = "aws-nat-gateway"
 	NetworkNACLType           = "aws-nacl"
+	NetworkInterface          = "aws-network-interface"
 	PolicyType                = "aws-policy"
 	PwdPolicyType             = "aws-password-policy"
 	RdsType                   = "aws-rds"
 	S3Type                    = "aws-s3"
 	SecurityGroupType         = "aws-security-group"
 	SecurityHubType           = "aws-securityhub"
+	Subnet                    = "aws-subnet"
 	TrailType                 = "aws-trail"
+	TransitGateway            = "aws-transit-gateway"
+	TransitGatewayAttachment  = "aws-transit-gateway-attachment"
+	VpcPeeringConnectionType  = "aws-vpc-peering-connection"
 	VpcType                   = "aws-vpc"
 
 	// GCP subtypes
@@ -119,14 +126,6 @@ type Condition interface {
 type ResourceInfo struct {
 	Resource
 	CycleMetadata cycle.Metadata
-}
-
-type EcsGcp struct {
-	Provider         string
-	ProjectId        string
-	ProjectName      string
-	OrganizationId   string
-	OrganizationName string
 }
 
 type Resource interface {
