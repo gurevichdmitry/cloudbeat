@@ -36,6 +36,7 @@ module "aws_ec2_for_cspm" {
   deploy_agent    = false # Agent will not be deployed
   deployment_name = "${var.deployment_name}-${random_string.suffix.result}"
   specific_tags   = merge(local.common_tags, { "ec2_type" : "cspm" })
+  aws_ec2_instance_type = "t3.small"
 }
 
 resource "random_string" "suffix" {

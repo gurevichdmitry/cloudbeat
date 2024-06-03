@@ -72,7 +72,8 @@ module "eks" {
       groups = [
         "system:masters",
       ]
-      rolearn = "arn:aws:iam::704479110758:role/Developer_eks"
+      # rolearn = "arn:aws:iam::704479110758:role/Developer_eks"
+      rolearn = "arn:aws:iam::964600956894:role/Developer_eks"
     }
   ]
 }
